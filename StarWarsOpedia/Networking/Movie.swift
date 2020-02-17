@@ -26,7 +26,7 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-struct Movie: Decodable {
+class Movie: Decodable {
   let id: String
   let title: String
   let year: String
@@ -39,6 +39,10 @@ struct Movie: Decodable {
 }
 
 extension Movie: Displayable {
+  var plot: String? {
+    ""
+  }
+  
   var titleLabelText: String {
     title
   }

@@ -10,6 +10,7 @@
 		18945C9523DF3C42001259B9 /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18945C9423DF3C42001259B9 /* Displayable.swift */; };
 		5394F02521864DF5006E754C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5394F02321864DF4006E754C /* LaunchScreen.storyboard */; };
 		5EDF5B5C112E2C1EEE10FA9B /* Pods_StarWarsOpedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4541B441807A46623455C3 /* Pods_StarWarsOpedia.framework */; };
+		861488A423FA848600F1293D /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861488A323FA848600F1293D /* MovieDetails.swift */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
 		E032761A236904230010905E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0327619236904230010905E /* Movie.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		18945C9423DF3C42001259B9 /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
 		5394F02421864DF4006E754C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		861488A323FA848600F1293D /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		CE4541B441807A46623455C3 /* Pods_StarWarsOpedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsOpedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2001F4A9144005CD714 /* StarWarsOpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsOpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				18945C9423DF3C42001259B9 /* Displayable.swift */,
 				E0327619236904230010905E /* Movie.swift */,
+				861488A323FA848600F1293D /* MovieDetails.swift */,
 				E087AADC23620E4400D1E33E /* Movies.swift */,
 			);
 			path = Networking;
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
+				861488A423FA848600F1293D /* MovieDetails.swift in Sources */,
 				E032761A236904230010905E /* Movie.swift in Sources */,
 				E087AADA23620E3B00D1E33E /* MainTableViewController.swift in Sources */,
 				E087AADE23620E4400D1E33E /* Movies.swift in Sources */,

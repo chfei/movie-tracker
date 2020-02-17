@@ -26,11 +26,35 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-protocol Displayable {
-  var titleLabelText: String { get }
-  var subtitleLabelText: String { get }
+import Foundation
+class MovieDetails: Decodable {
+  let id: String
+  let title: String
+  let year: String
+  let info: String
+  
+  enum CodingKeys: String, CodingKey {
+    case id
+    case title
+    case year
+    case info
+  }
+}
 
-  var listTitle: String { get }
-  var id: String { get }
-  var plot: String? { get }
+extension MovieDetails: Displayable {
+  var plot: String? {
+    info
+  }
+  
+  var titleLabelText: String {
+    title
+  }
+  
+  var subtitleLabelText: String {
+    "Year \(year)"
+  }
+  
+  var listTitle: String {
+    "Movies"
+  }
 }

@@ -50,14 +50,16 @@ class DetailViewController: UIViewController {
     
     listTableView.dataSource = self
     
-    fetchMovie()
   }
   
   private func commonInit() {
     guard let data = data else { return }
     
+    print(data.id)
+    
     titleLabel.text = data.titleLabelText
     subtitleLabel.text = data.subtitleLabelText
+    fetchMovie(for: data.id)
   }
 }
 
@@ -96,15 +98,16 @@ extension DetailViewController {
     }
   }
   
-  func fetchMovie() {
+  func fetchMovie(for id: String) {
 
-  let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/84f55e14fa52c6b21589f609947665e0"
-  AF.request(url).validate().responseDecodable(of: Movie.self) { (response) in
+  let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/"+id
+  AF.request(url).validate().responseDecodable(of: MovieDetails.self) { (response) in
     
     print(response)
     
-    guard let film = response.value else { return }
-    self.data=film;
+    guard let movieDetails = response.value else { return }
+    self.data=movieDetails;
+    self.item1Label.text = self.data?.plot
     //self.tableView.reloadData()
   }
 }
