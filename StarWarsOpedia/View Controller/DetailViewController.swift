@@ -58,17 +58,6 @@ class DetailViewController: UIViewController {
     
     titleLabel.text = data.titleLabelText
     subtitleLabel.text = data.subtitleLabelText
-    
-    item1TitleLabel.text = data.item1.label
-    item1Label.text = data.item1.value
-    
-    item2TitleLabel.text = data.item2.label
-    item2Label.text = data.item2.value
-    
-    item3TitleLabel.text = data.item3.label
-    item3Label.text = data.item3.value
-    
-    listTitleLabel.text = data.listTitle
   }
 }
 
@@ -109,7 +98,7 @@ extension DetailViewController {
   
   func fetchList() {
     guard let data = data else { return }
-    
+    /*
     switch data {
     case is Film:
       fetch(data.listItems, of: Starship.self)
@@ -118,5 +107,6 @@ extension DetailViewController {
     default:
       print("Unknown type: ", String(describing: type(of: data)))
     }
+ */
   }
 }
