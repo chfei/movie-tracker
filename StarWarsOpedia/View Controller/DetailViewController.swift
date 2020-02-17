@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
     super.viewDidLoad()
     commonInit()
     
-    listTableView.dataSource = self
+    //listTableView.dataSource = self
     
   }
   
