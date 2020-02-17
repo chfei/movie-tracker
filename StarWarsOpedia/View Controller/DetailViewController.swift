@@ -101,7 +101,11 @@ extension DetailViewController {
   func fetchMovie(for id: String) {
 
   let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/"+id
-  AF.request(url).validate().responseDecodable(of: MovieDetails.self) { (response) in
+  let headers: HTTPHeaders = [
+      "X-API-Key": "",
+      "Accept": "application/json"
+    ]
+  AF.request(url, headers: headers).validate().responseDecodable(of: MovieDetails.self) { (response) in
     
     print(response)
     

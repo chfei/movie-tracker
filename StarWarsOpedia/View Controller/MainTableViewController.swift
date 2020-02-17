@@ -86,7 +86,11 @@ extension MainTableViewController: UISearchBarDelegate {
 extension MainTableViewController {
   func fetchFilms() {
     let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/"
-    AF.request(url).validate().responseDecodable(of: Movies.self) { (response) in
+    let headers: HTTPHeaders = [
+      "X-API-Key": "",
+      "Accept": "application/json"
+    ]
+    AF.request(url, headers: headers).validate().responseDecodable(of: Movies.self) { (response) in
       
       print(response)
       
