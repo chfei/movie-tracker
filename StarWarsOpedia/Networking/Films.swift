@@ -27,11 +27,11 @@
 /// THE SOFTWARE.
 
 struct Films: Decodable {
-  let count: Int
+  let statusCode: Int
   let all: [Film]
   
   enum CodingKeys: String, CodingKey {
-    case count
-    case all = "results"
+    case statusCode = "statusCode"
+    case all = "body"
   }
 }

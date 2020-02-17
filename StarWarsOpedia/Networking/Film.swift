@@ -27,22 +27,16 @@
 /// THE SOFTWARE.
 
 struct Film: Decodable {
-  let id: Int
+  let id: String
   let title: String
-  let openingCrawl: String
-  let director: String
-  let producer: String
-  let releaseDate: String
-  let starships: [String]
+  let year: String
+  let info: String
   
   enum CodingKeys: String, CodingKey {
-    case id = "episode_id"
+    case id
     case title
-    case openingCrawl = "opening_crawl"
-    case director
-    case producer
-    case releaseDate = "release_date"
-    case starships
+    case year
+    case info
   }
 }
 
@@ -52,26 +46,11 @@ extension Film: Displayable {
   }
   
   var subtitleLabelText: String {
-    "Episode \(String(id))"
-  }
-  
-  var item1: (label: String, value: String) {
-    ("DIRECTOR", director)
-  }
-  
-  var item2: (label: String, value: String) {
-    ("PRODUCER", producer)
-  }
-  
-  var item3: (label: String, value: String) {
-    ("RELEASE DATE", releaseDate)
+    "Year \(year)"
   }
   
   var listTitle: String {
-    "STARSHIPS"
+    "Movies"
   }
   
-  var listItems: [String] {
-    starships
-  }
 }

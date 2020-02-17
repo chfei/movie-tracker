@@ -85,7 +85,11 @@ extension MainTableViewController: UISearchBarDelegate {
 // MARK: - Alamofire
 extension MainTableViewController {
   func fetchFilms() {
-    AF.request("https://swapi.co/api/films").validate().responseDecodable(of: Films.self) { (response) in
+    let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/"
+    AF.request(url).validate().responseDecodable(of: Films.self) { (response) in
+      
+      print(response)
+      
       guard let films = response.value else { return }
       self.films = films.all
       self.items = films.all
