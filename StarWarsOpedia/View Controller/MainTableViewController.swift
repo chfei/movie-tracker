@@ -30,7 +30,7 @@ import UIKit
 import Alamofire
 
 class MainTableViewController: UITableViewController {
-  var films: [Film] = []
+  var movies: [Movie] = []
   var items: [Displayable] = []
   var selectedItem: Displayable?
   
@@ -70,14 +70,14 @@ class MainTableViewController: UITableViewController {
 // MARK: - UISearchBarDelegate
 extension MainTableViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    guard let shipName = searchBar.text else { return }
-    searchStarships(for: shipName)
+    guard let movieName = searchBar.text else { return }
+    searchMovies(for: movieName)
   }
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     searchBar.text = nil
     searchBar.resignFirstResponder()
-    items = films
+    items = movies
     tableView.reloadData()
   }
 }
@@ -86,25 +86,27 @@ extension MainTableViewController: UISearchBarDelegate {
 extension MainTableViewController {
   func fetchFilms() {
     let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/"
-    AF.request(url).validate().responseDecodable(of: Films.self) { (response) in
+    AF.request(url).validate().responseDecodable(of: Movies.self) { (response) in
       
       print(response)
       
-      guard let films = response.value else { return }
-      self.films = films.all
-      self.items = films.all
+      guard let movies = response.value else { return }
+      self.movies = movies.all
+      self.items = movies.all
       self.tableView.reloadData()
     }
   }
   
-  func searchStarships(for name: String) {
-    let url = "https://swapi.co/api/starships"
-    let parameters: [String: String] = ["search": name]
-    AF.request(url, parameters: parameters).validate()
-      .responseDecodable(of: Starships.self) { response in
-        guard let starships = response.value else { return }
-        self.items = starships.all
-        self.tableView.reloadData()
+  func searchMovies(for name: String) {
+       let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/"
+       AF.request(url).validate().responseDecodable(of: Movies.self) { (response) in
+         
+         print(response)
+         
+         guard let movies = response.value else { return }
+         self.movies = movies.all
+         self.items = movies.all
+         self.tableView.reloadData()
+       }
     }
-  }
 }

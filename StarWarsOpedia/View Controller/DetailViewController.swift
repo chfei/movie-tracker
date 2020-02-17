@@ -99,7 +99,7 @@ extension DetailViewController {
   func fetchMovie() {
 
   let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/84f55e14fa52c6b21589f609947665e0"
-  AF.request(url).validate().responseDecodable(of: Film.self) { (response) in
+  AF.request(url).validate().responseDecodable(of: Movie.self) { (response) in
     
     print(response)
     
