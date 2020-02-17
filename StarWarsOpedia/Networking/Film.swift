@@ -30,13 +30,11 @@ struct Film: Decodable {
   let id: String
   let title: String
   let year: String
-  let info: String
   
   enum CodingKeys: String, CodingKey {
     case id
     case title
     case year
-    case info
   }
 }
 

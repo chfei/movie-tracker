@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
     
     listTableView.dataSource = self
     
-    fetchList()
+    fetchMovie()
   }
   
   private func commonInit() {
@@ -96,17 +96,16 @@ extension DetailViewController {
     }
   }
   
-  func fetchList() {
-    guard let data = data else { return }
-    /*
-    switch data {
-    case is Film:
-      fetch(data.listItems, of: Starship.self)
-    case is Starship:
-      fetch(data.listItems, of: Film.self)
-    default:
-      print("Unknown type: ", String(describing: type(of: data)))
-    }
- */
+  func fetchMovie() {
+
+  let url = "https://ylbspfsbt4.execute-api.us-east-1.amazonaws.com/dev/movies/84f55e14fa52c6b21589f609947665e0"
+  AF.request(url).validate().responseDecodable(of: Film.self) { (response) in
+    
+    print(response)
+    
+    guard let film = response.value else { return }
+    self.data=film;
+    //self.tableView.reloadData()
   }
+}
 }
